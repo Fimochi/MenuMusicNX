@@ -243,6 +243,35 @@ namespace tune::impl {
 
         bool g_should_pause      = false;
         bool g_should_run        = true;
+        float g_fade_gain        = 0.f;
+
+        constexpr float FADE_STEP = 0.06f; // ~500 ms at ~42 ms/buffer
+
+        auto ApplyFadeGain(s16 *data, size_t byte_size, float gain) -> void {
+            if (gain >= 0.999f) {
+                return;
+            }
+
+            if (gain <= 0.f) {
+                std::memset(data, 0, byte_size);
+                return;
+            }
+
+            const size_t count = byte_size / sizeof(s16);
+            for (size_t i = 0; i < count; i++) {
+                data[i] = static_cast<s16>(data[i] * gain);
+            }
+        }
+
+        auto UpdateFadeGain() -> void {
+            const float target = g_should_pause ? 0.f : 1.f;
+
+            if (g_fade_gain < target) {
+                g_fade_gain = std::min(target, g_fade_gain + FADE_STEP);
+            } else if (g_fade_gain > target) {
+                g_fade_gain = std::max(target, g_fade_gain - FADE_STEP);
+            }
+        }
 
         Result PlayTrack(const char* path) {
             /* Open file and allocate */
@@ -258,12 +287,15 @@ namespace tune::impl {
             }
 
             g_source = source.get();
+            g_fade_gain = 0.f;
 
             // for the first buffer, use very small buffer sizes to reduce latency between songs.
             int first = 1;
 
             while (g_should_run && g_status == PlayerStatus::Playing) {
-                if (g_should_pause) {
+                UpdateFadeGain();
+
+                if (g_fade_gain <= 0.f && g_should_pause) {
                     svcSleepThread(17'000'000);
                     continue;
                 }
@@ -295,6 +327,7 @@ namespace tune::impl {
                     if (nSamples <= 0) {
                         error = true;
                     } else {
+                        ApplyFadeGain(static_cast<s16 *>(buffer->buffer), nSamples, g_fade_gain);
                         buffer->data_size = nSamples;
                         R_TRY(audoutAppendAudioOutBuffer(buffer));
                     }

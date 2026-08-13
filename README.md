@@ -26,7 +26,7 @@ MenuMusicNX is a **fork of [sys-tune](https://github.com/HookedBehemoth/sys-tune
 
 ## Installation
 
-1. Build or download a release zip (see [Building](#building)).
+1. Download [`releases/MenuMusicNX-1.0.1.zip`](releases/MenuMusicNX-1.0.1.zip), or build your own (see [Building](#building)).
 2. Extract to the **root of your SD card**.
 3. Reboot the console (or restart title `4200000000000000` from the Toolbox).
 
