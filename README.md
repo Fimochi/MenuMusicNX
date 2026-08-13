@@ -59,7 +59,7 @@ Open the overlay with **L + D-Pad Down + Right Stick click** (default Tesla bind
 ## Building
 
 ```bash
-git clone --recursive https://github.com/YOUR_USER/MenuMusicNX.git
+git clone --recursive https://github.com/Fimochi/MenuMusicNX.git
 cd MenuMusicNX
 make
 make dist   # optional: produces dist/ zip ready for SD card
