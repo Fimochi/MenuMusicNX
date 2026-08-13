@@ -2,7 +2,7 @@
 
 HOME Menu background music for the Nintendo Switch.
 
-MenuMusicNX plays music **only while the HOME Menu is in the foreground**. Launch a game and playback pauses automatically. Press HOME over a running game and your music resumes from the same position — no manual toggles required.
+MenuMusicNX plays music **only while the HOME Menu is in the foreground**. Launch a game and playback pauses automatically with a **smooth fade-out effect**. Press HOME over a running game and your music resumes from the same position with a **smooth fade-in effect** — no manual toggles required.
 
 > **Note:** This project was developed with assistance from AI coding tools (Cursor), based on ideas and testing by the maintainer. The focus-detection approach builds on community research around `pdm:qry` play events ([sys-tune #55](https://github.com/HookedBehemoth/sys-tune/issues/55)).
 
@@ -18,6 +18,7 @@ MenuMusicNX is a **fork of [sys-tune](https://github.com/HookedBehemoth/sys-tune
 | Manual play/pause in overlay | Removed |
 | Title-based config (`[title]` in ini) | Ignored for playback |
 | `pmdmntGetApplicationProcessId` only | `pdm:qry` focus events + qlaunch detection |
+| No fade transition | **Smooth fade-in/out when entering or leaving games** |
 
 ## Requirements
 
