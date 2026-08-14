@@ -2,9 +2,9 @@
 
 HOME Menu background music for the Nintendo Switch.
 
-<p align="center">
-  <img src="assets/logo.png" alt="Project Logo" width="150">
-</p>
+<a href="https://github.com/Fimochi/MenuMusicNX/releases">
+  <img src="assets/logo.png" alt="Logo" width="400">
+</a>
 
 MenuMusicNX plays music **only while the HOME Menu is in the foreground**. Launch a game and playback pauses automatically with a **smooth fade-out effect**. Press HOME over a running game and your music resumes from the same position with a **smooth fade-in effect** — no manual toggles required.
 
