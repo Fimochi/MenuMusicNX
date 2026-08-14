@@ -4,7 +4,7 @@ HOME Menu background music for the Nintendo Switch.
 
 <p align="center">
   <a href="https://github.com/Fimochi/MenuMusicNX/releases">
-    <img src="assets/logo.png" alt="Logo" width="200">
+    <img src="assets/logo.png" alt="Logo" width="400">
   </a>
 </p>
 
