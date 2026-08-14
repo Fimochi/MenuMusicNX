@@ -12,8 +12,9 @@ MenuMusicNX is a **fork of [sys-tune](https://github.com/HookedBehemoth/sys-tune
 
 ## Manual notes from me, Fimochi
 - These notes are one of the only things that are not ai in this project
-- if there ARE any bugs (which i doubt), then pls remember i made this in less than like 2 hours with ai so dont judge me pls thx :)
+- if there ARE any bugs (which i doubt), then pls remember that this is open source so u can make changes, and also i made this in less than like 2 hours with ai so dont judge me pls thx :)
 - I'm too stupid to code this so i asked cursor to make this cuz i felt like it
+- I mean i created the images myself i didnt use ai for that because ai images suck
 - I also asked it to add a fade in and out effect for when you enter or exit a game so that it feels polished, and it did in the release 1.0.1, so this is a good fork with an advantage over others, and the fade is SO COOL
 - I know its ai coded so if u dont like that for some reason then you dont have to use it but its really good i swear
 - O yeah this will also overwrite your sys-tune install if you have it so id recommend uninstalling that first if u wanna use this
